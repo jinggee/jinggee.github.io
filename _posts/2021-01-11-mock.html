@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>在项目中接入YApi的mock服务 | uncle ge</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.ece217d8.css" as="style"><link rel="preload" href="/assets/js/app.6fe35129.js" as="script"><link rel="preload" href="/assets/js/3.c61b2de1.js" as="script"><link rel="preload" href="/assets/js/1.92ef6ebe.js" as="script"><link rel="preload" href="/assets/js/17.4bc27c1d.js" as="script"><link rel="prefetch" href="/assets/js/10.c14b5b6d.js"><link rel="prefetch" href="/assets/js/11.8e46e5d2.js"><link rel="prefetch" href="/assets/js/12.322a63a6.js"><link rel="prefetch" href="/assets/js/13.49ac157a.js"><link rel="prefetch" href="/assets/js/14.8e8ab288.js"><link rel="prefetch" href="/assets/js/15.988bcefa.js"><link rel="prefetch" href="/assets/js/16.c2abb771.js"><link rel="prefetch" href="/assets/js/18.ae0d444f.js"><link rel="prefetch" href="/assets/js/19.7b5e0a98.js"><link rel="prefetch" href="/assets/js/20.adcd6122.js"><link rel="prefetch" href="/assets/js/4.92a6ef30.js"><link rel="prefetch" href="/assets/js/5.ba687ca0.js"><link rel="prefetch" href="/assets/js/6.5cc60031.js"><link rel="prefetch" href="/assets/js/7.8604224d.js"><link rel="prefetch" href="/assets/js/8.0a19e8eb.js"><link rel="prefetch" href="/assets/js/9.70c7ed9b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ece217d8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1aefc0b4><div data-v-1aefc0b4><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1aefc0b4 data-v-1aefc0b4><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-1aefc0b4 data-v-1aefc0b4><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>uncle ge</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2></p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>jingge</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-1aefc0b4><header class="navbar" data-v-1aefc0b4><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/avatar.jpg" alt="uncle ge" class="logo"> <span class="site-name">uncle ge</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/devops/" class="nav-link"><i class="undefined"></i>
+  devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/webpack/" class="nav-link"><i class="undefined"></i>
+  webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1aefc0b4></div> <aside class="sidebar" data-v-1aefc0b4><div class="personal-info-wrapper" data-v-39576ba9 data-v-1aefc0b4><img src="/assets/img/avatar.jpg" alt="author-avatar" class="personal-img" data-v-39576ba9> <h3 class="name" data-v-39576ba9>
+    jingge
+  </h3> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>10</h3> <h6 data-v-39576ba9>Articles</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>6</h3> <h6 data-v-39576ba9>Tags</h6></div></div> <ul class="social-links" data-v-39576ba9><li class="social-item" data-v-39576ba9><i class="iconfont reco-github" style="color:#e15b64;" data-v-39576ba9></i></li><li class="social-item" data-v-39576ba9><i class="iconfont reco-npm" style="color:#fb9b5f;" data-v-39576ba9></i></li></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/devops/" class="nav-link"><i class="undefined"></i>
+  devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/webpack/" class="nav-link"><i class="undefined"></i>
+  webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-1aefc0b4><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>在项目中接入YApi的mock服务</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>jingge</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-1aefc0b4><main class="page" style="padding-right:0;"><section><div class="page-title"><h1 class="title">在项目中接入YApi的mock服务</h1> <div data-v-f875f3fc><i class="iconfont reco-account" data-v-f875f3fc><span data-v-f875f3fc>jingge</span></i> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>1/11/2021</span></i> <!----> <!----></div></div> <div class="theme-reco-content content__default"><p>通常一个需求过完TD之后，后端提供哪些接口，每个接口返回的字段也就已经确定了， 接下来就是前后端并行的开发。但经常会出现进度不一样的情况，有时候前端开发完了接口还没好，一直等待后端接口的话，会严重影响开发效率，采用mock方式可避免这个问题。</p> <h2 id="何为mock"><a href="#何为mock" class="header-anchor">#</a> 何为Mock？</h2> <p>Mock是一种根据约定规则进行数据模拟的技术，通过mock我们可以在不修改既有代码的情况下，拦截ajax请求，返回模拟的响应数据。</p> <p>总结起来mock有以下优点：</p> <ol><li>让前端攻城师独立于后端进行开发；</li> <li>通过随机数据，模拟各种场景，增加单元测试的真实性；</li> <li>开发无侵入；</li> <li>用法简单，符合直觉的接口；</li></ol> <h2 id="yapi的mock服务"><a href="#yapi的mock服务" class="header-anchor">#</a> YApi的Mock服务</h2> <p>mock框架有很多，常见的有mock.js, EasyMock等，为什么选用YApi的mock呢？
+</p> <ol><li><p>YApi是公司主推的接口管理工具，支持swagger导入；</p></li> <li><p>不用再自己写mock规则，Yapi自带mock服务，能够根据接口的数据结构生成随机数据；</p></li> <li><p>每一个接口都对应一个mock地址，而且地址的规则是固定的 <code>${yapi-host}/mock/${appid}/${api-path}</code> ，前端可以在不修改既有代码的情况下，通过反向代理调用mock服务；</p></li></ol> <h2 id="如何在项目中接入yapi的mock服务"><a href="#如何在项目中接入yapi的mock服务" class="header-anchor">#</a> 如何在项目中接入Yapi的mock服务</h2> <p>以Vue项目为例，前端只需3步就能通过yapi mock数据：</p> <p><strong>1.  package.json文件，添加一个script</strong></p> <div class="language- extra-class"><pre class="language-text"><code>scripts {
+  ...
+  
+  &quot;mock&quot;: &quot;VUE_APP_MOCK=true VUE_APP_MOCK_BASE_API=/mock/&lt;yapi-AppId&gt;/ajax vue-cli-service serve&quot;，
+}
+</code></pre></div><p>该命令设置了两个变量，<em>VUE_APP_MOCK</em>指是否启动mock，<em>VUE_APP_MOCK_BASE_API</em>为mock的base api，注意变量名必须以大写的VUE_APP_开头；</p> <p>以EAS对接平台为例，正常的接口路径为'/ajax/xxxx'，接口的mock地址为'/mock/1859/ajax/xxxxx',那参数VUE_APP_MOCK_BASE_API就可以设置为'/mock/1859/ajax';</p> <p><strong>2. 创建axios实例的时候根据配置项设置 baseurl</strong></p> <div class="language- extra-class"><pre class="language-text"><code>const http = Axios.create({
+  ...
+  baseURL: process.env.VUE_APP_MOCK
+    ? process.env.VUE_APP_MOCK_BASE_API : process.env.VUE_APP_BASE_API,
+  ...
+});
+</code></pre></div><p><em>VUE_APP_BASE_API</em> 是正常调用接口的base url， 通常为'/ajax';</p> <p><strong>3. vue.config文件配置 mock服务的反向代理</strong></p> <div class="language- extra-class"><pre class="language-text"><code>const vueConfig = {
+  devServer: {
+    proxy: {
+      '/mock/1859/ajax': {
+        https: true,
+        target: 'https://yapi.xrxr.xyz',
+        ws: true,
+        changeOrigin: true,
+      },
+      '/ajax': {
+        https: true,
+        target: 'https://easproxyadmin.aihaisi.com/',
+        ws: true,
+        changeOrigin: true,
+      },
+    },
+  },
+</code></pre></div><p>注意顺序：先‘mock/1859/ajax’，后配置‘ajax’</p> <p>配置完后，运行 npm run mock，启动项目就可以调用YApi的mock服务来mock数据了。</p> <h2 id="yapi-mock服务的一些高级用法"><a href="#yapi-mock服务的一些高级用法" class="header-anchor">#</a> YApi mock服务的一些高级用法</h2> <h4 id="定制生成规则"><a href="#定制生成规则" class="header-anchor">#</a> 定制生成规则</h4> <p>mock服务会根据接口定义生成随机数据，这些数据能满足接口类型的定义，但是有时候却不合法。例如分页信息pagesize，时间戳类型的字段，mock服务可能会返回一个负数，通过定制字段的规则可以避免这种情况。</p> <ol><li>YApi中接口页面点击编辑</li> <li>点击需要调整的字段的设置按钮</li> <li>在设置弹窗中可以设置规则
+<img src="https://hellosean1025.github.io/yapi/documents/images/usage/json-schema-mock.jpg" alt="image"></li></ol> <h4 id="高级mock"><a href="#高级mock" class="header-anchor">#</a> 高级mock</h4> <p>有时候不同的请求参数、IP地址返回不同的 HTTP Code、HTTP 头和 JSON 数据，yapi的高级mock提供了两种方式来解决这个问题。</p> <h5 id="_1-mock期望"><a href="#_1-mock期望" class="header-anchor">#</a> 1. Mock期望</h5> <p>YApi提供了交互式的弹窗来添加Mock期望。例如：想mock一下名称是zwj的菜单列表</p> <ol><li>选中接口，点击高级mock</li> <li>点击‘添加期望‘按钮，填写过滤规则以及期望返回数据，点击『确定』保存。
+<img src="https://hellosean1025.github.io/yapi/documents/images/usage/adv-mock-case3.png" alt="image"></li> <li>运行项目，打开对应的页面，调用接口查看返回的数据，结果就是高级mock中设置的期望返回数据。</li></ol> <h5 id="_2-自定义脚本"><a href="#_2-自定义脚本" class="header-anchor">#</a> 2. 自定义脚本</h5> <p>自定义脚本是一种更灵活的方式。Mock期望的方式添加的条件只能是参数等于某个值，才能返回相应的数据，而自定义脚本可以添加一些逻辑判断，根据用户请求的参数修改返回内容。</p> <p>举个例子：批量同步接口，它接收一个日期范围，同步所有待同步的数据，但如果日期范围超过30天，返回错误提示。这个时候就可以用自定义脚步对mock请求进行判断处理。</p> <ol><li>切换到脚步选项卡，输入下面的脚步，点击保存</li></ol> <div class="language- extra-class"><pre class="language-text"><code>if (params.end - params.start  &gt; 30*24*60*60*1000) {
+    mockJson.errMessage = '不能大于30天'
+    mockJson.success = false;
+} else {
+    mockJson.success = true;
+}
+</code></pre></div><ol start="2"><li>运行项目看下效果
+<img src="https://note.youdao.com/yws/api/personal/file/WEB2ae5c51870fc028c0c4b83d35d478dc2?method=download&amp;shareKey=e46267506f4c9dbf11187baae76a3291" alt="image"></li></ol> <p>Yapi提供了一些全局变量可以在脚本中使用：</p> <p><strong>请求</strong></p> <ul><li>header：请求的 HTTP 头</li> <li>params：请求参数，包括 Body、Query 中所有参数</li> <li>cookie：请求带的 Cookies</li></ul> <p><strong>响应</strong></p> <ul><li>mockJson：接口定义的响应数据 Mock 模板</li> <li>resHeader：响应的 HTTP 头</li> <li>httpCode：响应的 HTTP 状态码</li> <li>delay：Mock 响应延时，单位为 ms</li> <li>Random：Mock.Random 方法，可以添加自定义占位符,详细使用方法请查看 Wiki</li></ul> <h4 id="mock-优先级说明"><a href="#mock-优先级说明" class="header-anchor">#</a> Mock 优先级说明</h4> <p>请求 Mock 数据时，规则匹配优先级：Mock 期望 &gt; 自定义 Mock 脚本 &gt; 项目全局 mock 脚本 &gt; 普通 Mock。</p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>YApi的mock服务真的挺好用的， 接入也很简单，前端小伙伴们可以试着用一用。</p></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-cb1513f6></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.6fe35129.js" defer></script><script src="/assets/js/3.c61b2de1.js" defer></script><script src="/assets/js/1.92ef6ebe.js" defer></script><script src="/assets/js/17.4bc27c1d.js" defer></script>
+  </body>
+</html>

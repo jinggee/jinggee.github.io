@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS中的相等性判断===, ==, Object.is() | uncle ge</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.ece217d8.css" as="style"><link rel="preload" href="/assets/js/app.6fe35129.js" as="script"><link rel="preload" href="/assets/js/3.c61b2de1.js" as="script"><link rel="preload" href="/assets/js/1.92ef6ebe.js" as="script"><link rel="preload" href="/assets/js/13.49ac157a.js" as="script"><link rel="prefetch" href="/assets/js/10.c14b5b6d.js"><link rel="prefetch" href="/assets/js/11.8e46e5d2.js"><link rel="prefetch" href="/assets/js/12.322a63a6.js"><link rel="prefetch" href="/assets/js/14.8e8ab288.js"><link rel="prefetch" href="/assets/js/15.988bcefa.js"><link rel="prefetch" href="/assets/js/16.c2abb771.js"><link rel="prefetch" href="/assets/js/17.4bc27c1d.js"><link rel="prefetch" href="/assets/js/18.ae0d444f.js"><link rel="prefetch" href="/assets/js/19.7b5e0a98.js"><link rel="prefetch" href="/assets/js/20.adcd6122.js"><link rel="prefetch" href="/assets/js/4.92a6ef30.js"><link rel="prefetch" href="/assets/js/5.ba687ca0.js"><link rel="prefetch" href="/assets/js/6.5cc60031.js"><link rel="prefetch" href="/assets/js/7.8604224d.js"><link rel="prefetch" href="/assets/js/8.0a19e8eb.js"><link rel="prefetch" href="/assets/js/9.70c7ed9b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ece217d8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1aefc0b4><div data-v-1aefc0b4><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1aefc0b4 data-v-1aefc0b4><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-1aefc0b4 data-v-1aefc0b4><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>uncle ge</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2></p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>jingge</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-1aefc0b4><header class="navbar" data-v-1aefc0b4><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/avatar.jpg" alt="uncle ge" class="logo"> <span class="site-name">uncle ge</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/devops/" class="nav-link"><i class="undefined"></i>
+  devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/webpack/" class="nav-link"><i class="undefined"></i>
+  webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1aefc0b4></div> <aside class="sidebar" data-v-1aefc0b4><div class="personal-info-wrapper" data-v-39576ba9 data-v-1aefc0b4><img src="/assets/img/avatar.jpg" alt="author-avatar" class="personal-img" data-v-39576ba9> <h3 class="name" data-v-39576ba9>
+    jingge
+  </h3> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>10</h3> <h6 data-v-39576ba9>Articles</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>6</h3> <h6 data-v-39576ba9>Tags</h6></div></div> <ul class="social-links" data-v-39576ba9><li class="social-item" data-v-39576ba9><i class="iconfont reco-github" style="color:#e15b64;" data-v-39576ba9></i></li><li class="social-item" data-v-39576ba9><i class="iconfont reco-npm" style="color:#fb9b5f;" data-v-39576ba9></i></li></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/devops/" class="nav-link"><i class="undefined"></i>
+  devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/webpack/" class="nav-link"><i class="undefined"></i>
+  webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-1aefc0b4><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>JS中的相等性判断===, ==, Object.is()</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>jingge</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-1aefc0b4><main class="page" style="padding-right:0;"><section><div class="page-title"><h1 class="title">JS中的相等性判断===, ==, Object.is()</h1> <div data-v-f875f3fc><i class="iconfont reco-account" data-v-f875f3fc><span data-v-f875f3fc>jingge</span></i> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>11/15/2019</span></i> <!----> <i class="tags iconfont reco-tag" data-v-f875f3fc><span class="tag-item" data-v-f875f3fc>JavaScript</span></i></div></div> <div class="theme-reco-content content__default"><p>相信刚接触JS的人都会被他的想等性判断给整糊涂，看看下面代码，你能答对几个？</p> <div class="language- extra-class"><pre class="language-text"><code>NaN === NaN // false
+NaN == NaN // false
+Object.is(NaN, NaN) // true
+0 == false  // true
+1 == true   // true
+Number(null) === 0  // true
+null == 0   // false
+</code></pre></div><p>Javascript提供了三种不同的值比较操作，分别是严格相等、宽松相等、以及Object.is，希望看完下面的内容，能够彻底弄清楚他的判断逻辑。</p> <h3 id="_1-严格相等-x-y判断逻辑"><a href="#_1-严格相等-x-y判断逻辑" class="header-anchor">#</a> 1. 严格相等 x === y判断逻辑</h3> <ol><li>如果x的数据类型和y的数据类型不相同，返回false；</li> <li>如果x是Number类型
+<ul><li>x是NaN，返回false</li> <li>y是NaN，返回false</li> <li>x的值和y的值相等，返回true</li> <li>x是+0，y是-0，返回true</li> <li>x是-0，y是+0，返回true</li> <li>否则返回false</li></ul></li> <li>其他类型参照SameValueNonNumber(x, y)
+<ul><li>断言：x,y不是Number类型;</li> <li>断言: x,y的数据类型相同;</li> <li>x是undefined, y是undefined return true;</li> <li>x是null, y是null,return true;</li> <li>x是字符串类型,当且仅当x,y字符序列完全相同时（长度相同，每个位置上的字符也相同）返回true, 否则返回false；</li> <li>如果x是布尔类型，当x,y都为true或者都为false时返回true，否则返回false；</li> <li>如果x是symbol类型，当x,y是相同的symbol值，返回true，否则返回false;</li> <li>如果x,y是同一个对象值，返回true，否则返回false;</li></ul></li></ol> <div class="language- extra-class"><pre class="language-text"><code>NaN === NaN // false
+undefined === undefined // true
+null === null   // true
+undefined === null  // false
+</code></pre></div><h3 id="_2-宽松相等-x-y"><a href="#_2-宽松相等-x-y" class="header-anchor">#</a> 2. 宽松相等 x == y</h3> <ol><li>如果x,y的类型相同，返回x===y的结果；</li> <li>如果x是null, y是undefined， 返回true;</li> <li>如果x是undefined, y是null, 返回true;</li> <li>如果x是数值，y是字符串, 返回x == ToNumber(y);</li> <li>如果x是字符串，y是数值, 返回ToNumber(x) == y;</li> <li>如果x是布尔类型， 返回ToNumber(x)==y 的结果;</li> <li>如果y是布尔类型，返回 x==ToNumber(y) 的结果；</li> <li>如果x是String或Number或Symbol中的一种并且Type(y)是Object，返回 x==ToPrimitive(y) 的结果</li> <li>如果Type(x)是Object并且Type(y)是String或Number或Symbol中的一种，返回 ToPrimitive(x)==y 的结果</li> <li>其他返回false</li></ol> <div class="language- extra-class"><pre class="language-text"><code>12 == '0xc' // true, 0xc是16进制
+12 == '12'  // true
+12 == '12c' // false, 说明ToNumber转换是用的Number()方法
+</code></pre></div><p><strong>注意</strong>：</p> <div class="language- extra-class"><pre class="language-text"><code>Number(null) === 0
+但是
+null == 0 // false, 
+</code></pre></div><p><img src="https://note.youdao.com/yws/api/personal/file/80F144305A624105813BAE3B0D993969?method=download&amp;shareKey=732bddc500706c564c8737fd9855a07d" alt="image"></p> <h4 id="_2-1-tonumber将一个值转换为数值类型"><a href="#_2-1-tonumber将一个值转换为数值类型" class="header-anchor">#</a> 2.1 ToNumber将一个值转换为数值类型</h4> <p>详情参考<a href="http://www.geeee.top/2018/08/21/number/" target="_blank" rel="noopener noreferrer">数值类型转换<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <ol><li>如果是boolean类型， true返回1，false返回0；</li> <li>如果是数值，只是简单的传入返回；</li> <li>如果是null，返回0</li> <li>如果是undefined, 返回NaN;</li> <li>如果是字符串，字符串如果只包含数字，则将其转换成十进制数；如果是有效的浮点格式，将其转换成对应的浮点数值；如果是二进制或十六进制将其转换成对应的十进制数值；</li> <li>如果是对象，调用对象的valueOf()方法，然后依照前面规则转换，如果valueOf返回值是NaN，则调用toString()方法，再依照前面的规则转换返回的字符串</li></ol> <h4 id="_2-2-toprimitive"><a href="#_2-2-toprimitive" class="header-anchor">#</a> 2.2 ToPrimitive</h4> <p>toPrimitive(A)通过尝试调用 A 的A.toString() 和 A.valueOf() 方法，将参数 A 转换为原始值（Primitive）；
+JS中原始类型有：Number、String、Boolean、Null、Undefined;</p> <p><strong>不同类型对象的valueOf()方法的返回值:</strong></p> <table><thead><tr><th>对象</th> <th>返回值</th></tr></thead> <tbody><tr><td>Array</td> <td>返回数组对象本身。</td></tr> <tr><td>Boolean</td> <td>布尔值</td></tr> <tr><td>Date</td> <td>存储的时间是从 1970 年 1 月 1 日午夜开始计的毫秒数 UTC</td></tr> <tr><td>Function</td> <td>函数本身</td></tr> <tr><td>Number</td> <td>数字值</td></tr> <tr><td>Object</td> <td>对象本身。这是默认情况, 可以覆盖自定义对象的valueOf方法</td></tr> <tr><td>String</td> <td>字符串值</td></tr></tbody></table> <div class="language- extra-class"><pre class="language-text"><code>// Array：返回数组对象本身
+var array = [&quot;ABC&quot;, true, 12, -5];
+console.log(array.valueOf() === array);   // true
+
+// Date：当前时间距1970年1月1日午夜的毫秒数
+var date = new Date(2013, 7, 18, 23, 11, 59, 230);
+console.log(date.valueOf());   // 1376838719230
+
+// Number：返回数字值
+var num =  15.26540;
+console.log(num.valueOf());   // 15.2654
+
+// 布尔：返回布尔值true或false
+var bool = true;
+console.log(bool.valueOf() === bool);   // true
+
+// new一个Boolean对象
+var newBool = new Boolean(true);
+// valueOf()返回的是true，两者的值相等
+console.log(newBool.valueOf() == newBool);   // true
+// 但是不全等，两者类型不相等，前者是boolean类型，后者是object类型
+console.log(newBool.valueOf() === newBool);   // false
+
+// Function：返回函数本身
+function foo(){}
+console.log( foo.valueOf() === foo );   // true
+var foo2 =  new Function(&quot;x&quot;, &quot;y&quot;, &quot;return x + y;&quot;);
+console.log( foo2.valueOf() );
+/*
+ƒ anonymous(x,y
+) {
+return x + y;
+}
+*/
+
+// Object：返回对象本身
+var obj = {name: &quot;张三&quot;, age: 18};
+console.log( obj.valueOf() === obj );   // true
+
+// String：返回字符串值
+var str = &quot;http://www.xyz.com&quot;;
+console.log( str.valueOf() === str );   // true
+
+// new一个字符串对象
+var str2 = new String(&quot;http://www.xyz.com&quot;);
+// 两者的值相等，但不全等，因为类型不同，前者为string类型，后者为object类型
+console.log( str2.valueOf() === str2 );   // false
+</code></pre></div><h3 id="_3-同值相等"><a href="#_3-同值相等" class="header-anchor">#</a> 3.同值相等</h3> <p>同值相等由 Object.is 方法判断：</p> <ul><li>两个值都是 undefined</li> <li>两个值都是 null</li> <li>两个值都是 true 或者都是 false</li> <li>两个值是由相同个数的字符按照相同的顺序组成的字符串</li> <li>两个值指向同一个对象</li> <li>两个值都是数字并且
+<ul><li>都是正零 +0，</li> <li>或者都是负零 -0，</li> <li>或者都是 NaN</li> <li>都是除零和 NaN 外的其它同一个数字</li></ul></li></ul> <div class="language- extra-class"><pre class="language-text"><code>Object.is('foo', 'foo');     // true
+Object.is(window, window);   // true
+
+Object.is('foo', 'bar');     // false
+Object.is([], []);           // false
+
+var foo = { a: 1 };
+var bar = { a: 1 };
+Object.is(foo, foo);         // true
+Object.is(foo, bar);         // false
+
+Object.is(null, null);       // true
+
+Object.is(true, 'true')     // false
+
+// 特例
+Object.is(0, -0);            // false
+Object.is(0, +0);            // true
+Object.is(-0, -0);           // true
+Object.is(NaN, 0/0);         // true
+</code></pre></div><h3 id="_4-零值相等"><a href="#_4-零值相等" class="header-anchor">#</a> 4.零值相等</h3> <p>与同值相等类似，不过会认为 +0 与 -0 相等。</p> <h3 id="小结"><a href="#小结" class="header-anchor">#</a> 小结</h3> <ul><li>=== 不做类型转换，当两边的数类型不相同时，直接返回false；当前类型相同且都是数值类型的时候，有一个是NaN，那么结果就是false, 另外 +0 === -0</li> <li>==运算符，当两边操作数类不相同时会做隐式转换，然后才进行比较，这样的话就会出现 false == 0, '' == false 等现象， 但是Object.is不会做这种转换</li></ul></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-cb1513f6></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.6fe35129.js" defer></script><script src="/assets/js/3.c61b2de1.js" defer></script><script src="/assets/js/1.92ef6ebe.js" defer></script><script src="/assets/js/13.49ac157a.js" defer></script>
+  </body>
+</html>

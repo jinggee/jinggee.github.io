@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>初识graphql | uncle ge</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.ece217d8.css" as="style"><link rel="preload" href="/assets/js/app.6fe35129.js" as="script"><link rel="preload" href="/assets/js/3.c61b2de1.js" as="script"><link rel="preload" href="/assets/js/1.92ef6ebe.js" as="script"><link rel="preload" href="/assets/js/14.8e8ab288.js" as="script"><link rel="prefetch" href="/assets/js/10.c14b5b6d.js"><link rel="prefetch" href="/assets/js/11.8e46e5d2.js"><link rel="prefetch" href="/assets/js/12.322a63a6.js"><link rel="prefetch" href="/assets/js/13.49ac157a.js"><link rel="prefetch" href="/assets/js/15.988bcefa.js"><link rel="prefetch" href="/assets/js/16.c2abb771.js"><link rel="prefetch" href="/assets/js/17.4bc27c1d.js"><link rel="prefetch" href="/assets/js/18.ae0d444f.js"><link rel="prefetch" href="/assets/js/19.7b5e0a98.js"><link rel="prefetch" href="/assets/js/20.adcd6122.js"><link rel="prefetch" href="/assets/js/4.92a6ef30.js"><link rel="prefetch" href="/assets/js/5.ba687ca0.js"><link rel="prefetch" href="/assets/js/6.5cc60031.js"><link rel="prefetch" href="/assets/js/7.8604224d.js"><link rel="prefetch" href="/assets/js/8.0a19e8eb.js"><link rel="prefetch" href="/assets/js/9.70c7ed9b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ece217d8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1aefc0b4><div data-v-1aefc0b4><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1aefc0b4 data-v-1aefc0b4><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-1aefc0b4 data-v-1aefc0b4><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>uncle ge</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2></p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>jingge</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-1aefc0b4><header class="navbar" data-v-1aefc0b4><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/avatar.jpg" alt="uncle ge" class="logo"> <span class="site-name">uncle ge</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/devops/" class="nav-link"><i class="undefined"></i>
+  devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/webpack/" class="nav-link"><i class="undefined"></i>
+  webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1aefc0b4></div> <aside class="sidebar" data-v-1aefc0b4><div class="personal-info-wrapper" data-v-39576ba9 data-v-1aefc0b4><img src="/assets/img/avatar.jpg" alt="author-avatar" class="personal-img" data-v-39576ba9> <h3 class="name" data-v-39576ba9>
+    jingge
+  </h3> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>10</h3> <h6 data-v-39576ba9>Articles</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>6</h3> <h6 data-v-39576ba9>Tags</h6></div></div> <ul class="social-links" data-v-39576ba9><li class="social-item" data-v-39576ba9><i class="iconfont reco-github" style="color:#e15b64;" data-v-39576ba9></i></li><li class="social-item" data-v-39576ba9><i class="iconfont reco-npm" style="color:#fb9b5f;" data-v-39576ba9></i></li></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/devops/" class="nav-link"><i class="undefined"></i>
+  devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/webpack/" class="nav-link"><i class="undefined"></i>
+  webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-1aefc0b4><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>初识graphql</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>jingge</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-1aefc0b4><main class="page" style="padding-right:0;"><section><div class="page-title"><h1 class="title">初识graphql</h1> <div data-v-f875f3fc><i class="iconfont reco-account" data-v-f875f3fc><span data-v-f875f3fc>jingge</span></i> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>5/11/2020</span></i> <!----> <i class="tags iconfont reco-tag" data-v-f875f3fc><span class="tag-item" data-v-f875f3fc>graphql</span></i></div></div> <div class="theme-reco-content content__default"><p>最近在做公司的一个内部项目，其中用到了graphql技术，通过这些天的学习对graphql有了大概的认知，这篇文章算是对graphql的总结，本文主要分以下四部分部分。</p> <ul><li><a href="#chap1"> graphql简介 </a></li> <li><a href="#chap2">graphql与REST的对比</a></li> <li><a href="#chap3">graphql的核心概念</a></li> <li><a href="#chap4">常见的三种graphql服务器架构</a></li></ul> <h2 id="graphql简介"><a href="#graphql简介" class="header-anchor">#</a> <span id="chap1">graphql简介</span></h2> <p><strong>什么是Grphql?</strong></p> <blockquote><p>GraphQL 是一个用于 API 的查询语言，是一个使用基于类型系统来执行查询的服务端运行时（类型系统由你的数据定义）。它是一个新的API标准，由Facebook开发和开源，提供了比REST更高效、灵活、强大的替代方案。</p></blockquote> <p>上述定义是<a href="https://graphql.cn/learn/" target="_blank" rel="noopener noreferrer">官方文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>给出的，看完之后可能一头雾水，api不是服务端定义好供客户端调用的吗？基于API的查询是什么鬼？
+
+传统的服务端会提供很多接口，每个接口对应一个url，接口的返回值是定义好的，客户端被动的接收所有的数据。 例如一个查询患者详情的接口它的返回结果包含了如下的信息：</p> <html><img src="https://note.youdao.com/yws/api/personal/file/WEBa4330258c296ea1191e299f34a6eccd1?method=download&amp;shareKey=06d99d46d328659e02ad66d07cf01a72" style="width:400px;"> <br> <br></html> <p>可以看到这个接口返回的字段非常多，有些字段前端用的到，有些字段对前端来讲完全没用，这就是数据过载的问题，这样会有损应用的性能（需要更长时间下载，解析更多的数据）。</p> <p>Graphql服务能够很好的解决这个问题，“用于API的查询语言”表明graphql允许客户端向服务端接口发送查询请求，客户端需要什么字段就请求什么字段，graphql服务会以一致的方式返回这些数据。举个例子：有个患者查询的接口，客户端客户端只想查询患者姓名和年龄，用graphql的话只需下面的查询就能得到想要的结果。</p> <div class="language- extra-class"><pre class="language-text"><code>query {
+    patient(id: '1') {
+        name，
+        age，
+    }
+}
+
+接口返回结果：
+{
+    data: {
+        patient： {
+            name: '张三'，
+            age：25
+        }
+    }
+}
+</code></pre></div><p><strong>什么原理呢？</strong></p> <p>graphql服务是基于类型系统的，服务端会事先定义好schema，schema描述了服务所支持的查询，变更，订阅操作等，graphql服务收到客户端请求后，会逐字段遍历，找到schema中对应的字段，然后执行这个字段的“解析器”，通过解析器获得数据返回给客户端。</p> <p>下面是一个graphql服务 schema的定义：该graphql服务有一个名称为patient的查询，查询的返回结果的类型是Patient；还有一个addPatient的变更操作，操作返回结果是修改后的患者信息。</p> <div class="language- extra-class"><pre class="language-text"><code>// graphql.schema
+
+type Query {
+    patient(id: String): Patient,
+}
+
+type Mutation{
+    addPatient(name: String, age: Number, phone:String):Patient
+}
+
+type Patient{
+    name: String,
+    age: Int,
+    ...
+}
+schema {
+    query: Query,
+}
+</code></pre></div><p>还是以客户端请求查询患者为例，客户端发送下面的查询请求</p> <div class="language- extra-class"><pre class="language-text"><code>query {
+    patient(id: '1') {
+        name，
+        age，
+    }
+}
+</code></pre></div><p>服务端收到请求后，遍历到patient字段，然后调用patient的解析器，解析器resolver通过读数据库查询数据，或者调用第三方服务返回数据。</p> <p><strong>graphql服务的执行过程大概是这个样子</strong>：</p> <p><img src="https://pic2.zhimg.com/v2-75d88260003c0e9447fadf7e069ac445_b.jpg" alt="image"></p> <h2 id="与rest服务对比"><a href="#与rest服务对比" class="header-anchor">#</a> <span id="chap2"> 与REST服务对比 </span></h2> <ol><li><p>graphql服务允许客户端选择返回的字段。</p> <p>它解决了数据过度获取的问题，在实际场景中可能对多端产品的接口复用有一定的帮助。例如公司的产品可能会有web端，安卓，小程序等等，不同的客户端同一功能展示的效果可能不一样。就医生列表页面而言，web端可能需要展示id、姓名、医生类型、而小程序医生列表可能只需要展示姓名、头像、诊疗服务费等。</p> <p>针对这种情况，服务端要么提供一个返回所有字段的接口供所有客户端调用，要么提供多个接口供不同到客户端调用。然而这两种方式都有他的弊端，第一种方式就会导致过度获取问题，客户端得到了大量无用的数据，这样会有损应用的性能（需要更长时间下载，解析更多的数据）。第二种方式则会造成后期维护成本的增加。而graphq这种基于接口查询的方式能很好的解决这个问题。</p></li> <li><p>graphql服务允许客户端只通过一次请求就得到所有需要的数据。</p></li></ol> <p>使用REST API，通常会过访问多个接口来收集数据，例如我们中控系统中的耗材详情页面，除了调用接口查询耗材详情信息，还会调接口查询一些枚举下拉框的数据, 如包装单位、税务分类等等。如果用graphql只需调用一次接口就能查询所有的数据</p> <div class="language- extra-class"><pre class="language-text"><code>query {
+    cousumble(id) {
+        name,
+        alias,
+        ...
+    },
+    // 查询库存单位
+    units() {
+        ...
+    },
+    // 查询分类
+    category() {
+        ...
+    }
+}
+</code></pre></div><ol start="3"><li>graphql使用强类型系统定义API，服务支持什么操作都在schema定义好了，schema就相当于服务端和客户端之间的契约，一旦定义好前后端团队便可独立的工作。</li> <li>rest服务中，查询数据一般用get请求，添加修改数据一般用post，put请求，删除数据一般用delete请求。而graphql所有的操作都是post请求。</li> <li>rest服务中，每一个接口对应一个url，而graphql服务中只有一个url，通常是/graphql。</li></ol> <h2 id="graphql的几个核心概念"><a href="#graphql的几个核心概念" class="header-anchor">#</a> <span id="chap3">graphql的几个核心概念</span></h2> <h3 id="_1、schema和类型"><a href="#_1、schema和类型" class="header-anchor">#</a> 1、Schema和类型</h3> <p>Schema定义了GraphQL API的类型系统，它完整描述了客户端可以访问的所有数据（对象、成员变量、关系、任何类型）。客户端的请求将根据schema进行校验和执行。</p> <p>graphql有自己的语言来定义schema即SDL（schema definition language）。</p> <h3 id="_2、对象类型"><a href="#_2、对象类型" class="header-anchor">#</a> 2、对象类型</h3> <p>对象类型是 GraphQL schema中的一个最基本的组件，它就表示你可以从服务上获取到什么类型的对象，以及这个对象有什么字段。可以简单把它理解为model的定义，下面是用SDL定义对象类型的例子。</p> <div class="language- extra-class"><pre class="language-text"><code>type Person {
+  name: String!
+  age: Int!
+  posts: [Post!]!
+}
+</code></pre></div><p>这样就定义了一个名为Person的对象类型，他有两个字段，字段name和age是标量类型，感叹号表示非空。中括号表示是数组类型，所以posts是个数组类型，且非空，数组中的每一项也不为空。</p> <p>Person中我们只定义了三个字段，这意味着在一个操作 Person类型的 GraphQL 查询中只能出现 name，age 和 post 字段。</p> <p><strong>字段的数据类型只有两种可能：要么是标量类型，要么是个对象类型。</strong></p> <h5 id="标量类型"><a href="#标量类型" class="header-anchor">#</a> 标量类型</h5> <p>一个对象类型有自己的名字和字段，而某些时候，这些字段必然会解析到具体数据。这就是标量类型的来源：它们表示对应 GraphQL 查询的叶子节点</p> <p>graphql的自带的标量类型有5种：Int、Float、String、Boolean，Id。</p> <p>当然我们也可以自定义新的标量类型，例如定义一个Date类型。</p> <div class="language- extra-class"><pre class="language-text"><code>scalar Date
+</code></pre></div><h5 id="枚举类型"><a href="#枚举类型" class="header-anchor">#</a> 枚举类型</h5> <p><strong>枚举类型是一种特殊的标量</strong>，它限制在一个特殊的可选值集合内。这让你能够：
+验证这个类型的任何参数是可选值的的某一个
+与类型系统沟通，一个字段总是一个有限值集合的其中一个值。</p> <div class="language- extra-class"><pre class="language-text"><code>enum Episode {
+  NEWHOPE
+  EMPIRE
+  JEDI
+}
+</code></pre></div><h3 id="_3、查询与变更"><a href="#_3、查询与变更" class="header-anchor">#</a> 3、查询与变更</h3> <p>schema内有两个特殊的类型：Query，Mutation。这两个类型和常规对象类型无差别，它们之所以特殊，是因为它们定义了每一个 GraphQL查询的入口。graphql服务支持的查询操作都定义在Query对象类型中，修改删除操作都定义在Mutation对象类型中。</p> <h4 id="定义查询"><a href="#定义查询" class="header-anchor">#</a> 定义查询</h4> <p>Query类型确切定义了客户端可以针对您的数据图执行哪些GraphQL查询（即读取操作）。它类似于对象类型，但其名称始终为Query。</p> <div class="language- extra-class"><pre class="language-text"><code>type Query {
+  getBooks: [Book]
+  getAuthors: [Author]
+}
+</code></pre></div><p>此Query类型定义了两个可用的查询：getBooks和getAuthors。</p> <h4 id="定义变更"><a href="#定义变更" class="header-anchor">#</a> 定义变更</h4> <div class="language- extra-class"><pre class="language-text"><code>type Mutation {
+  createPost(post: PostAndMediaInput): Post
+}
+
+input PostAndMediaInput {
+  title: String
+  body: String
+  mediaUrls: [String]
+}
+</code></pre></div><p>查询可以传递参数，如果参数特别多可以定义一个输入类型，另外graphql的类型系统还支持接口定义等等,更多关于graphql的语法信息可参考<a href="https://graphql.cn/learn/" target="_blank" rel="noopener noreferrer">官方文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="_4、解析器"><a href="#_4、解析器" class="header-anchor">#</a> 4、解析器</h3> <p>前面提到的schema只是定义了graphql服务支持的操作，他描述了允许客户端执行哪些查询，可以从服务器上获取哪些类型的数据，以及这些数据之间的关系。服务端收到请求后具体怎么把数据返回给客户端，算法的核心非常简单：逐字段遍历查询，为每个字段执行“解析器”。<a href="https://www.apollographql.com/blog/graphql-explained-5844742f195e" target="_blank" rel="noopener noreferrer">这篇文章<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>有关于resolver详细执行过程的介绍。</p> <h4 id=""><a href="#" class="header-anchor">#</a></h4> <h1 id="graphql服务常见的三种架构"><a href="#graphql服务常见的三种架构" class="header-anchor">#</a> <span id="chap4"> graphql服务常见的三种架构 </span></h1> <p>作为一种服务，最重要的就是对数据的操作，graphql服务可以直接操作数据库包括mysql，mongo等，也可以集成第三方服务或其他微服务。以下是常见的三种架构：</p> <ol><li><strong>graphql服务直接读取数据库</strong></li></ol> <html><img src="https://note.youdao.com/yws/api/personal/file/WEB4c21439588a9fe6b60dbb37cba3efec1?method=download&amp;shareKey=8e063dbfbad36db7b5b1a1741f3ecb13" style="width:500px;"> <br> <br></html> <ol start="2"><li><strong>graphql服务仅作为一个代理层，客户端通过这个代理层访问第三方或者旧系统的服务。</strong></li></ol> <html><img src="https://note.youdao.com/yws/api/personal/file/WEBeba5df4f825134c5ef252b8e9a719da8?method=download&amp;shareKey=29e008e6154e7c2f763c19bbe224949a" style="width:500px;"> <br> <br></html> <p>这张图有没有很眼熟？是不是和 BFF的理念十分贴合？</p> <ol start="3"><li><strong>混合模式，即能访问数据库，又集成了第三方服务或旧系统</strong>。</li></ol> <p>混合模式是将以上两种方法结合起来，构建一个即能连接数据库又与旧系统或第三方系统通信的GraphQL服务器。
+</p><html><img src="https://note.youdao.com/yws/api/personal/file/WEB61afa9b4894851a0a9acf9301375ba7d?method=download&amp;shareKey=6d39157ed4df280051ac49c220c74e6e" style="width:500px;"></html><p></p> <h3 id="附上一些graphql资料"><a href="#附上一些graphql资料" class="header-anchor">#</a> 附上一些Graphql资料</h3> <ul><li><a href="https://graphql.cn/" target="_blank" rel="noopener noreferrer">GraphQL 官网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.howtographql.com/" target="_blank" rel="noopener noreferrer">howtographql<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.prisma.io/blog/top-5-reasons-to-use-graphql-b60cfa683511" target="_blank" rel="noopener noreferrer">Top 5 Reasons to Use GraphQL<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.apollographql.com/blog/graphql-explained-5844742f195e" target="_blank" rel="noopener noreferrer">GraphQL explained<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://zhuanlan.zhihu.com/p/44550146" target="_blank" rel="noopener noreferrer">GraphQL 技术浅析<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.apollographql.com/docs/apollo-server/" target="_blank" rel="noopener noreferrer">apollo graphql<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-cb1513f6></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.6fe35129.js" defer></script><script src="/assets/js/3.c61b2de1.js" defer></script><script src="/assets/js/1.92ef6ebe.js" defer></script><script src="/assets/js/14.8e8ab288.js" defer></script>
+  </body>
+</html>
